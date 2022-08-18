@@ -18,12 +18,9 @@ enum ENCODER {
 }
 
 extend google.protobuf.MessageOptions {
-    // generate a consumer for a message
-    bool consumer = 80001;
-
-    // generate a producer for a message
-    bool producer = 80002;
+    // generate a broker interface
+    bool generate = 80001;
 
     // encode method
-    ENCODER encoder = 80003;
+    ENCODER encoder = 80002;
 }
