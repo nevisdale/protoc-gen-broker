@@ -17,7 +17,7 @@ protoc plugin has been made in bin folder.
 # Example
 
 There is content [example.proto](example/example.proto).
-```
+```protobuf
 syntax = "proto3";
 
 package example;
