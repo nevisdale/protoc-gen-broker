@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/nevisdale/protoc-gen-broker/broker"
-
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/descriptorpb"
 	"google.golang.org/protobuf/types/pluginpb"
+
+	"github.com/nevisdale/protoc-gen-broker/broker"
 )
 
 func main() {
