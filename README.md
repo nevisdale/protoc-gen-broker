@@ -24,7 +24,7 @@ package example;
 
 import "broker/broker.proto";
 
-option go_package = "example/proto";
+option go_package = "example/example";
 
 message Foo {
     option (broker.generate) = true;
