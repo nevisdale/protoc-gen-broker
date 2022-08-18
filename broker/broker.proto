@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package broker;
+
+option go_package = "protoc-gen-broker/broker";
+
+import "google/protobuf/descriptor.proto";
+
+enum ENCODER {
+    // default is JSON
+    ENCODER_UNSPECIFIED = 0;
+
+    // JSON
+    ENCODER_JSON = 1;
+
+    // PROTOBUF
+    ENCODER_PROTOBUF = 2;
+}
+
+extend google.protobuf.MessageOptions {
+    // generate a consumer for a message
+    bool consumer = 80001;
+
+    // generate a producer for a message
+    bool producer = 80002;
+
+    // encode method
+    ENCODER encoder = 80003;
+}
