@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package broker;
 
-option go_package = "github.com/nevisdale/protoc-gen-broker/broker/broker.proto";
+option go_package = "github.com/nevisdale/protoc-gen-broker/broker";
 
 import "google/protobuf/descriptor.proto";
 
