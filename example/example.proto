@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package example;
+
+import "broker/broker.proto";
+
+option go_package = "example/proto";
+
+message Foo {
+    option (broker.generate) = true;
+    option (broker.encoder) = ENCODER_JSON;
+
+    string example = 1;
+}
+
+message Bar {
+    option (broker.generate) = true;
+    option (broker.encoder) = ENCODER_PROTOBUF;
+
+    string example = 1;
+}
+
+message FooBar {
+    string example = 1;
+}
