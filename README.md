@@ -1,7 +1,7 @@
 # protoc-gen-broker is a protoc plugin to generate a broker interface for protobuf messages.
 
 # Description
-The goal is generating contracts by protobuf models. That can makes easy data transfer with broker. Plugin supports JSON and protobuf encodings.
+The goal is generating contracts by protobuf models. It can make easy data transfer with broker. Plugin supports JSON and protobuf encodings.
 
 The plugin generates a broker interface with methods:
 - method for sending to broker;
@@ -45,9 +45,9 @@ message FooBar {
 }
 ```
 
-Option __broker.generate__ uses for generating a broker interface. Option __broker.encoder__ allows select an encode method (default __JSON__)
+Option __broker.generate__ used for generating a broker interface. Option __broker.encoder__ allows to select an encode method (default __JSON__)
 
-Next, generate __pb__ files from example.proto using below command:
+Then, generate __pb__ files from example.proto using below command:
 ```sh
 PATH=`pwd`/bin:$PATH protoc -I . --proto_path=example \
     --go_out=. --go_opt=paths=source_relative \
@@ -79,7 +79,7 @@ type BarBrokerConsumerInterface interface {
 ```
 
 # Warning
-You can generate broker interface in only folder with generated protobuf models now. Maybe I will fix it in near future.
+You can generate broker interface in only folder with generated protobuf models now. Maybe I will fix it in the near future.
 
 # License
 [MIT](LICENSE)
