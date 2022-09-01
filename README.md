@@ -64,7 +64,7 @@ type FooBrokerProducerInterface interface {
 }
 type FooHandler func(context.Context, *Foo) error
 type FooBrokerConsumerInterface interface {
-	Handle(context.Context, *Foo) (io.Closer, error)
+	Handle(context.Context, *Foo) error
 }
 
 // Bar broker interface
@@ -73,7 +73,7 @@ type BarBrokerProducerInterface interface {
 }
 type BarHandler func(context.Context, *Bar) error
 type BarBrokerConsumerInterface interface {
-	Handle(context.Context, *Bar) (io.Closer, error)
+	Handle(context.Context, *Bar) error
 }
 ...
 ```
