@@ -2,7 +2,6 @@ package runtime
 
 import (
 	"context"
-	"io"
 )
 
 type MessageBrokerProducer interface {
@@ -12,5 +11,5 @@ type MessageBrokerProducer interface {
 type MessageHandler func(ctx context.Context, msg []byte) error
 
 type MessageBrokerConsumer interface {
-	Handle(ctx context.Context, handler MessageHandler) (io.Closer, error)
+	Handle(ctx context.Context, handler MessageHandler) error
 }

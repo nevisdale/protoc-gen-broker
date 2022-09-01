@@ -110,7 +110,7 @@ func (g generator) message(msg *protogen.Message) {
 
 	g.p.P(`type ` + typ + `Handler func(context.Context, *` + typ + `) error`)
 	g.p.P(`type ` + typ + `BrokerConsumerInterface interface {`)
-	g.p.P(`	Handle(context.Context, *` + typ + `) (io.Closer, error)`)
+	g.p.P(`	Handle(context.Context, *` + typ + `) error`)
 	g.p.P(`}`)
 	g.p.P()
 	g.p.P(`type ` + typ + `BrokerConsumer struct {`)
@@ -121,7 +121,7 @@ func (g generator) message(msg *protogen.Message) {
 	g.p.P(`	return ` + typ + `BrokerConsumer{c: c}`)
 	g.p.P(`}`)
 	g.p.P()
-	g.p.P(`func (c ` + typ + `BrokerConsumer) Handle(ctx context.Context, handler ` + typ + `Handler) (io.Closer, error) {`)
+	g.p.P(`func (c ` + typ + `BrokerConsumer) Handle(ctx context.Context, handler ` + typ + `Handler) error {`)
 	g.p.P(`	h := bruntime.MessageHandler(func(ctx context.Context, message []byte) error {`)
 	g.p.P(`		var msg ` + typ)
 	g.p.P(`		err := ` + encvar + `.Decode(message, &msg)`)
